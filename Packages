@@ -1,0 +1,47 @@
+import numpy as np
+
+import math
+
+import requests
+
+from datetime import datetime
+
+import random
+
+
+
+datti=datetime.now()
+
+print(datti)
+
+
+
+array1=np.array([1,2,3,3,4])
+
+array2=np.array([1,2,3,3,6])
+
+print(array1+array2)
+
+print(np.zeros((1,2)))
+
+print(np.ones((3,2)))
+
+
+
+sqrt_val=math.sqrt(25)
+
+print(sqrt_val)
+
+val_pi=math.pi
+
+print(val_pi)
+
+#resp=requests.get("https://www.google.com")
+
+#print("header:",resp.headers)
+
+
+
+randnum=random.randint(1,15)
+
+print(randnum)
