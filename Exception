@@ -1,0 +1,12 @@
+try:
+    n1=int(input("enter the first number: "))
+    n2=int(input("enter the second number: "))
+    div=n1/n2
+except ValueError:
+    print("enter valid numbers")
+except ZeroDivisionError:
+    print("enter a non zero number as divident")
+else:
+    print(f"{n1}/{n2}={div}")
+finally:
+    print("program finished")
