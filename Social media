@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Social Media</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #0effff;
+        } 
+	h2 {
+            color: #017c7c;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            resize: none;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #postsContainer {
+            margin-top: 20px;
+        }
+        .post {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Social Media</h1>
+    <div>
+        <textarea id="postInput" placeholder="What's on your mind?" rows="4"></textarea>
+        <br>
+        <button id="postButton">Post</button>
+    </div>
+    <h2>Posts</h2>
+    <div id="postsContainer"></div>
+
+    <script>
+        const postButton = document.getElementById('postButton');
+        const postInput = document.getElementById('postInput');
+        const postsContainer = document.getElementById('postsContainer');
+
+        postButton.addEventListener('click', function() {
+            const postText = postInput.value.trim();
+            if (postText) {
+                const postDiv = document.createElement('div');
+                postDiv.className = 'post';
+                postDiv.textContent = postText;
+                postsContainer.prepend(postDiv);
+                postInput.value = '';
+            } else {
+                alert("Please enter a message.");
+            }
+        });
+    </script>
+</body>
+</html>
